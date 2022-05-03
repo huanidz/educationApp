@@ -1,0 +1,44 @@
+@import "../globalStyle/sharedColor.css";
+@import "../globalStyle/sharedAnimation.css";
+
+.dropdown-wrapper {
+    
+}
+
+.dropdown-heading {
+    height: 60px;
+    min-width: 250px;
+    text-align: center;
+    font-size: 1.5rem;
+    border: 1px solid #ccc;
+    line-height: 2.1;
+    background-color: var(--palette-color-blue);
+    background-image: linear-gradient(to right, rgba(255,0,0,0), var(--gradient-color-blue));
+    color: #eef;
+}
+
+.dropdown-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.dropdown-list-item {
+    border: 1px solid #ccc;
+    color: #022;
+    font-size: 1.4rem;
+    margin: 12px 0;
+    padding-left: 16px;
+    height: 50px;
+    line-height: 1.9;
+    background-color: #f8f9fb;
+}
+
+.dropdown-wrapper:hover .dropdown-list {
+    display: block;
+}
+
+.dropdown-wrapper:hover .dropdown-list li {
+    transform-origin: top center;
+}
+
+

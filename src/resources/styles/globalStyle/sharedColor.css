@@ -1,0 +1,13 @@
+:root {
+    /* Pallette Colors */
+    --palette-color-blue: #143F6B; 
+    --palette-color-red: #F55353; 
+    --palette-color-orange: #FEB139;  
+    --palette-color-yellow: #F6F54D;
+    
+    /* Other Colors */
+    --white-color: #fff;
+
+    /* To right gradient color */
+    --gradient-color-blue: #00529a;
+}

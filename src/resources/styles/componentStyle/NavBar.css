@@ -1,0 +1,100 @@
+@import "../globalStyle/sharedColor.css";
+
+.main-nav {
+    width: 100%;
+    height: 8vh;
+    background-color: #143F6B;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 5000;
+    overflow: hidden;
+}
+
+.main-nav-logo {
+    height: calc(100%-10px);
+    min-width: 160px;
+    max-width: 160px;
+    background-image: url("../../img/svg/seahorse-svgrepo-com.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    top: 10px;
+}
+
+.main-nav-item {
+    width: 40%;
+}
+
+.main-nav-item-list {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+}
+
+.main-nav-item-list-item {
+    color: var(--white-color);
+    font-size: 16px;
+    position: relative;
+    cursor: pointer;
+}
+
+.main-nav-item-list-item::after {
+    content: "";
+    display: block;
+    background-color: var(--white-color);
+    height: 1px;
+    width: 0;
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transition: 0.15s ease-out;
+}
+
+.main-nav-item-list-item:hover::after {
+    left: 0;
+    width: 100%;
+}
+
+.main-nav-login {
+    width: 220px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 16px;
+}
+
+.main-nav-login button {
+    width: 100px;
+    height: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    opacity: 0.95;
+}
+
+.main-nav-login button:hover {
+    opacity: 1;
+    border-color: azure;
+}
+
+.btn-navbar {
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 2px;
+}
+
+.btn-login {
+    background-color: var(--palette-color-red);
+    color: #fff;
+}
+
+.btn-signup {
+    background-color:var(--palette-color-orange);
+    opacity: 0.9;
+    color: #081e30;
+}

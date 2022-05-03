@@ -1,0 +1,113 @@
+*{
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 4000px;
+}
+
+.btn {
+    border: none;
+    border-radius: 2px;
+}
+
+.italic-text {
+    font-style: italic;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.margin-16 {
+    margin: 16px;
+}
+
+.padding-16 {
+    padding: 16px;
+}
+
+.margin-32 {
+    margin: 32px;
+}
+
+.padding-32 {
+    padding: 32px;
+}
+
+.margin-64 {
+    margin: 64px;
+}
+
+.padding-64 {
+    padding: 64px;
+}
+
+.bor-radius-2 {
+    border-radius: 2px;
+}
+
+.bor-radius-4 {
+    border-radius: 4px;
+}
+
+.bor-radius-8 {
+    border-radius: 8px;
+}
+
+.is-left {
+    left: 0;
+}
+
+.is-right {
+    right: 0;
+}
+
+.flex-row-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.align-self-right-flex {
+    margin-left: auto;
+}
+
+.align-self-left-flex {
+    align-self: left;
+}
+
+.align-item-flex-start {
+    align-items: flex-start;
+}
+
+.align-item-flex-end {
+    align-items: flex-end;
+}
+
+.justify-content-flex-end {
+    justify-content: flex-end;
+}
+
+.justify-content-flex-start {
+    justify-content: flex-start;
+}
+
+/* Text Align */
+.text-align-right {
+    text-align: right;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+/* Display */
+
+.display-none {
+    display: none;
+}

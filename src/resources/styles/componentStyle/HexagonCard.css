@@ -1,0 +1,63 @@
+@import "../globalStyle/sharedColor.css";
+@import "../globalStyle/sharedAnimation.css";
+
+.hex-card-wrapper {
+    position: relative;
+    width: 100%;
+    align-items: flex-end; 
+    display: inline-flex;
+    animation: bubbleUpDown 8s ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.hex-card {
+  display: inline-block;
+  color: var(--palette-color-orange);
+  position: relative;
+}
+
+.hex-card-200 {
+    width: 200px;
+}
+
+.hex-card-150 {
+    width: 150px;
+}
+
+.hex-card::before {
+  content: "";
+  display: block;
+  background: currentColor;
+  padding-top: 90%;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  position: relative;
+  z-index: 100;
+}
+
+.hex-card-squarebox {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background: white;
+    top: 0;
+    display: none;
+    border-radius: 20px;
+}
+
+.hex-card:hover .hex-card-squarebox.is-left {
+    display: block;
+    width: 200%;
+    animation: slideFromLeft 0.2s ease-in-out;
+    animation-fill-mode: forwards;
+    z-index: 50;
+}
+
+.hex-card:hover .hex-card-squarebox.is-right {
+    display: block;
+    width: 200%;
+    animation: slideFromRight 0.2s ease-in-out;
+    animation-fill-mode: forwards;
+    z-index: 50;
+}
+
+
