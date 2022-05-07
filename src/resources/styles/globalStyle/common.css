@@ -2,9 +2,9 @@
     box-sizing: border-box;
 }
 
-html {
+/* html {
     min-height: 4000px;
-}
+} */
 
 .btn {
     border: none;
@@ -110,4 +110,8 @@ html {
 
 .display-none {
     display: none;
+}
+
+.display-block {
+    display: block;
 }

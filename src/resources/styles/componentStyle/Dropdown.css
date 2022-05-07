@@ -1,0 +1,32 @@
+.dropdown {
+}
+
+.dropdown-btn {
+    background-color: var(--gradient-color-blue);
+    color: azure;
+    height: 40px;
+    font-size: 1.4rem;
+    line-height: 1.7;
+    border-radius: 2px;
+}
+
+.dropdown-item {
+    background-color: white;
+    height: 40px;
+    font-size: 1.2rem;
+    line-height: 1.9;
+}
+
+.dropdown-btn, 
+.dropdown-item {
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: rgb(247, 243, 243);
+}
+
+.dropdown-btn,
+.dropdown-item {
+    padding-left: 8px;
+}

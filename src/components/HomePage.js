@@ -1,4 +1,5 @@
 import '../resources/styles/globalStyle/common.css'
+import '../resources/styles/componentStyle/NavBar.css';
 import NavBar from './NavBar'
 import FlatContainer from './FlatContainer'
 import FreeContainer from './FreeContainer'
@@ -67,7 +68,13 @@ function HomePage() {
 
     return (
         <div>
-            <NavBar/>
+            <NavBar>
+                <ul className="main-nav-item-list">
+                    <li className="main-nav-item-list-item">Khóa học</li>
+                    <li className="main-nav-item-list-item">Bài viết</li>
+                    <li className="main-nav-item-list-item">Đăng ký học</li>
+                </ul>
+            </NavBar>
             <FlatContainer/>
             <SexyHeading style={{margin:"-15% 0 3%"}}>What do we offer ?</SexyHeading>
             <FreeContainer className="flex-row-container" style={{margin:"0 18% 0"}}>
