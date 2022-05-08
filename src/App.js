@@ -1,12 +1,11 @@
 import './App.css';
 import './resources/styles/globalStyle/common.css'
-import LessonPage from './components/LessonPage'
-import HomePage from './components/HomePage';
+import AdministrationPage from './components/AdministrationPage';
+
 function App() {
   return (
     <div>
-        <LessonPage/>
-        {/* <HomePage/> */}
+        <AdministrationPage/>
     </div>
   );
 }
