@@ -56,7 +56,7 @@
     background-color: rgba(199, 196, 204,0.8);    /* color of the scroll thumb */
     border-radius: 20px;       /* roundness of the scroll thumb */
     border: 1px solid rgb(239, 235, 243);
-  }
+}
 
 .lesson-video-area {
     width: 75%;

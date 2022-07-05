@@ -1,13 +1,15 @@
 import '../resources/styles/componentStyle/LessonPage.css'
 import '../resources/styles/globalStyle/common.css'
 
-import Dropdown from './Dropdown';
+import DropdownLearn from './DropdownLearn';
 import Iframe from 'react-iframe';
 import LessonDescription from './LessonDescription';
 import NavBar from './NavBar';
+import {useParams} from 'react-router-dom';
 
 function LessonPage(props) {
     
+    let {lessonid} = useParams();
 
     const dummyData = [
         {
@@ -65,21 +67,20 @@ function LessonPage(props) {
 
     return (
         <>
-            <NavBar>
-                
-            </NavBar>
+            <NavBar/>
             <div className="lesson-wrap">
                 <div className="lesson-list-area">
                     <div className="lesson-progression-track">
-                        <h2 className="lesson-course-name">{courseName ? courseName : "Course Name"}</h2>
+                        <h2 className="lesson-course-name">{courseName ? courseName : `Course Name ${lessonid}`}</h2>
 
                     </div>
                     <div className="lesson-video-list">
                         {dummyData.map((section)=>{
-                            return <Dropdown key={section.sectionId} heading={section.sectionName} data={section.lessonList}/>
+                            return <DropdownLearn key={section.sectionId} heading={section.sectionName} data={section.lessonList}/>
                         })}
                     </div>
                 </div>
+
                 <div className="lesson-video-area">
                     <div className="lesson-video">
                         <Iframe url="http://www.youtube.com/embed/xDMP3i36naA" 
@@ -91,6 +92,7 @@ function LessonPage(props) {
                         <LessonDescription />
                     </div>
                 </div>
+
             </div>
         </>
     )

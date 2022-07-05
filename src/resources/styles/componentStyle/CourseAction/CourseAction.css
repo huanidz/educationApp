@@ -1,0 +1,134 @@
+@import "../../globalStyle/sharedColor.css";
+
+.course-act-header {
+    margin: 8px 0 16px;
+}
+
+.course-act-btn-back {
+    margin-bottom: 32px;
+}
+
+.course-act-courseName {
+    font-size: 1.4rem;
+}
+
+.course-act-input-area {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.course-act-input-fields {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.ca-input-label {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+.course-act-input-fields .ca-ip-text,
+.course-act-input-fields textarea {
+    width: 80%;
+    min-height: 30px;
+    margin-bottom: 20px;
+    resize: none;
+    font-size: 1rem;
+}
+
+.course-act-input-fields textarea {
+    height: 100px;
+}
+
+.course-act-input-fields input:focus,
+.course-act-input-fields textarea:focus {
+    outline: none;
+}
+
+.course-act-input-fields input[type=radio] {
+    margin: 0;
+}
+
+.cdc-lesson-video,
+.ca-course-img {
+    border: 1px solid #000;
+    width: 100%;
+    height: 80%;
+    border-radius: 4px;
+}
+
+.ca-btn-main {
+    text-align: center;
+    width: 100%;
+}
+
+/* Course Action List Lesson */
+.ca-course-detail {
+    width: 100%;
+    height: 300px;
+    overflow: auto;
+    margin: 16px 0;
+}
+
+.ca-course-detail::-webkit-scrollbar {
+    background-color: transparent;
+    width: 10px;
+}
+
+.ca-course-detail::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.ca-course-detail::-webkit-scrollbar-thumb {
+    background-color: rgba(199, 196, 204,0.8);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 1px solid rgb(239, 235, 243);
+}
+
+/* Course Action Button */
+.cab-btn {
+    height: 28px;
+    font-size: .8rem;
+    background-color: var(--palette-color-orange);
+    border: 1px solid #333;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Course Detail Creation */
+.cdc-modal {
+    position: fixed;
+    width: 800px;
+    height: 600px;
+    border: 1px solid #000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+}
+
+/* Lesson Questing */
+
+.cdc-questing-detail {
+    width: 100%;
+    height: 30%;
+    overflow: auto;
+    margin: 16px 0;
+}
+
+.cdc-questing-detail::-webkit-scrollbar {
+    background-color: transparent;
+    width: 10px;
+}
+
+.cdc-questing-detail:-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.cdc-questing-detail::-webkit-scrollbar-thumb {
+    background-color: rgba(199, 196, 204,0.8);    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 1px solid rgb(239, 235, 243);
+}

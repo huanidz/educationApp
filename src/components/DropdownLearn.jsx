@@ -20,7 +20,7 @@ function Dropdown({data, heading, HeadingOnClickCustomEvent, ItemOnClickEvent, H
                 items.map((item,index)=>{
                     return (<>
                         <div style={{display:'flex', justifyContent:'space-between'}} className="dropdown-item">
-                            {item}
+                            <Link to={`/course/${index}`} >{item}</Link>
                             <div className='dropdown-child-optional-item'>{ChildOptionalItem}</div>
                         </div>
                         {IsReadyToHaveChild && (index + 1 === items.length) ? 

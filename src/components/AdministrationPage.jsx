@@ -2,6 +2,7 @@ import React , {useState} from 'react';
 
 import "../resources/styles/componentStyle/AdminPage.css"
 import CrudTable from "./CrudTable";
+import CourseAction from './CourseComponents/CourseAction';
 
 function AdministrationPage(){
 
@@ -55,7 +56,8 @@ function AdministrationPage(){
                     </div>
                     <button className="admin-btn-create">Create</button>
                 </div>
-                <CrudTable data={dummy} columns={col}/>
+                {/* <CrudTable data={dummy} columns={col}/> */}
+                <CourseAction actionType={'create'}/>
             </div>
         </div>
     )
