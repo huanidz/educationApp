@@ -1,3 +1,7 @@
+.exam-page {
+    width: 100%;
+}
+
 .exam-page-heading {
     width: 100%;
     text-align: center;
@@ -13,9 +17,23 @@
 }
 
 .question-box {
+    padding: 32px 32px;
     width: 100%;
     min-height: 100px;
-    margin: 16px;
-    padding: 16px 0;
-    border: 1px solid #ccc ;
+}
+
+.question-name {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+}
+
+.question-box li {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+}
+
+.question-box li input {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 8px;
 }

@@ -6,16 +6,25 @@ import Iframe from 'react-iframe';
 import LessonDescription from './LessonDescription';
 import NavBar from './NavBar';
 import {useParams, useNavigate} from 'react-router-dom';
-import getAllCourse from '../apis/CourseApi';
+import getCourseById from '../apis/CourseApi';
 import { useEffect } from 'react';
+import { useState } from 'react';
+import axios from 'axios';
 
 function LessonPage(props) {
     
     let {courseid,lessonid} = useParams();
-    let navigate = useNavigate();
+    const [courseName, setCourseName] = useState("");
 
     useEffect(()=>{
-        getAllCourse();
+        axios.get("https://huy-huan.herokuapp.com/course/1", {
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            }
+        })
+        .then(res=>{
+            setCourseName(res.data.nameCourse);
+        });
     },[])
 
     const dummyData = [
@@ -70,15 +79,13 @@ function LessonPage(props) {
         },
     ]
 
-    const courseName = undefined;
-
     return (
         <>
             <NavBar/>
             <div className="lesson-wrap">
                 <div className="lesson-list-area">
                     <div className="lesson-progression-track">
-                        <h2 className="lesson-course-name">{courseName ? courseName : `Course Name ${lessonid}`}</h2>
+                        <h2 className="lesson-course-name">{courseName}</h2>
 
                     </div>
                     <div className="lesson-video-list">

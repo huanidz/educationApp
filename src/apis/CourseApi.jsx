@@ -1,15 +1,27 @@
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import CourseAction from "../components/CourseComponents/CourseAction";
 import baseUrl from "./common";
 
-function getAllCourse(){
-    axios.get(baseUrl+"course", {
+async function getAllCourse(){
+    return await axios.get(baseUrl+"course", {
         headers: {
             "Access-Control-Allow-Origin": "*"
         }
     })
     .then((response)=>{
-        console.log(response);
+        return response.data;
     })
 }
 
-export default getAllCourse;
+async function getCourseById(id){
+    return axios.get(baseUrl+"course/"+id, {
+        headers: {
+            "Access-Control-Allow-Origin": "*"
+        }
+    })
+    .then(res=>res.data);
+}
+
+
+export default getCourseById;
