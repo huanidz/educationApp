@@ -5,11 +5,18 @@ import DropdownLearn from './DropdownLearn';
 import Iframe from 'react-iframe';
 import LessonDescription from './LessonDescription';
 import NavBar from './NavBar';
-import {useParams} from 'react-router-dom';
+import {useParams, useNavigate} from 'react-router-dom';
+import getAllCourse from '../apis/CourseApi';
+import { useEffect } from 'react';
 
 function LessonPage(props) {
     
-    let {lessonid} = useParams();
+    let {courseid,lessonid} = useParams();
+    let navigate = useNavigate();
+
+    useEffect(()=>{
+        getAllCourse();
+    },[])
 
     const dummyData = [
         {
