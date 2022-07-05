@@ -1,0 +1,21 @@
+.exam-page-heading {
+    width: 100%;
+    text-align: center;
+    padding-top: 36px;
+    font-size: 2.1rem;
+}
+
+.exam-area {
+    margin: 48px 16px;
+    min-height: 1000px;
+    background-color: #F9F2ED;
+    border-radius: 8px;
+}
+
+.question-box {
+    width: 100%;
+    min-height: 100px;
+    margin: 16px;
+    padding: 16px 0;
+    border: 1px solid #ccc ;
+}
