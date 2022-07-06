@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import '../resources/styles/componentStyle/Dropdown.css'
 import {Link} from 'react-router-dom';
 
-function Dropdown({data, heading, HeadingOnClickCustomEvent, ItemOnClickEvent, HeadingOptionalItem, ChildOptionalItem, IsReadyToHaveChild}) {
+function DropdownLearn({data, heading,courseId, ItemOnClickEvent, HeadingOptionalItem, ChildOptionalItem, IsReadyToHaveChild}) {
 
     const [isActive, setIsActive] = useState(false);
 
@@ -12,7 +12,7 @@ function Dropdown({data, heading, HeadingOnClickCustomEvent, ItemOnClickEvent, H
         <div className="dropdown">
             <div    style={{display:'flex', justifyContent:'space-between'}} 
                     className="dropdown-btn" 
-                    onClick={HeadingOnClickCustomEvent ? HeadingOnClickCustomEvent : (e)=>{setIsActive(!isActive)}}>
+                    onClick={(e)=>{setIsActive(!isActive)}}>
                 {heading}
                 <div className='dropdown-heading-optional-item'>{HeadingOptionalItem}</div>
             </div>
@@ -20,7 +20,7 @@ function Dropdown({data, heading, HeadingOnClickCustomEvent, ItemOnClickEvent, H
                 items.map((item,index)=>{
                     return (<>
                         <div style={{display:'flex', justifyContent:'space-between'}} className="dropdown-item">
-                            <Link to={`/course/1/lesson/${index}`} >{item}</Link>
+                            <Link to={`/course/${courseId}/lesson/${index}`} >{item.nameLesson}</Link>
                             <div className='dropdown-child-optional-item'>{ChildOptionalItem}</div>
                         </div>
                         {IsReadyToHaveChild && (index + 1 === items.length) ? 
@@ -36,4 +36,4 @@ function Dropdown({data, heading, HeadingOnClickCustomEvent, ItemOnClickEvent, H
     )
 }
 
-export default Dropdown;
+export default DropdownLearn;

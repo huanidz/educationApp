@@ -8,6 +8,11 @@
     font-size: 1.4rem;
     line-height: 1.7;
     border-radius: 2px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: horizontal;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .dropdown-item {

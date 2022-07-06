@@ -15,17 +15,56 @@ function LessonPage(props) {
     
     let {courseid,lessonid} = useParams();
     const [courseName, setCourseName] = useState("");
+    const [listChapter, setListChapter] = useState([]); 
+    const [listLesson, setListLesson] = useState([]);
+    const [videoUrl, setVideoUrl] = useState("")
 
     useEffect(()=>{
-        axios.get("https://huy-huan.herokuapp.com/course/1", {
+        axios.get(`https://huy-huan.herokuapp.com/course/${courseid}`, {
             headers: {
                 "Access-Control-Allow-Origin": "*"
             }
         })
         .then(res=>{
+
             setCourseName(res.data.nameCourse);
+            setListChapter(res.data.listChapter);
+
+            res.data.listChapter.forEach((chapter, index)=>{
+                axios.get(`https://huy-huan.herokuapp.com/chapter/${chapter.id}`,{headers: {
+                    "Access-Control-Allow-Origin": "*"
+                }}).then((response)=>{
+                    setListLesson((prev) => {
+                        var ids = new Set(prev.map(d => d.id));
+                        var merged = [...prev, ...response.data.listLesson.filter(d => !ids.has(d.id))];
+                        return merged;
+                    });
+                }).catch((e)=>{
+                    console.log(e);
+                })
+            });
+
+            return res;
+        })
+        .then(res=>{
+            axios.get(`https://huy-huan.herokuapp.com/lesson/${lessonid}`,{headers: {
+                "Access-Control-Allow-Origin": "*"
+            }})
+            .then((response)=>{
+                setVideoUrl(response.data.linkvideo);
+                console.log(response.data.linkvideo);
+            })
         });
-    },[])
+
+    },[courseid])
+
+
+
+    // useEffect(()=>{
+    //     console.log(listChapter);
+        
+    //         // setListLesson([...new Map(listLesson.map((item, key) => [item[key], item])).values()]);
+    // },[listChapter])
 
     const dummyData = [
         {
@@ -89,15 +128,23 @@ function LessonPage(props) {
 
                     </div>
                     <div className="lesson-video-list">
-                        {dummyData.map((section)=>{
-                            return <DropdownLearn key={section.sectionId} heading={section.sectionName} data={section.lessonList}/>
-                        })}
+                        {
+                            listChapter.map((chapter)=>{
+                                var lessonInside = listLesson.filter((lesson)=>{
+                                    return lesson.chapter_id === chapter.id;
+                                })
+                                // console.log(lessonInside);
+                                return <DropdownLearn key={chapter.id} heading={chapter.nameChapter} data={lessonInside} courseId={courseid} />
+                            })
+                        }
                     </div>
                 </div>
 
                 <div className="lesson-video-area">
                     <div className="lesson-video">
-                        <Iframe url="http://www.youtube.com/embed/xDMP3i36naA" 
+                        <Iframe 
+                            // url="http://www.youtube.com/embed/xDMP3i36naA" 
+                            url={videoUrl}
                             width='100%'
                             height='100%' 
                         />

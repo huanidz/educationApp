@@ -1,7 +1,10 @@
 import React from "react";
+import { useState } from "react";
 import "../resources/styles/componentStyle/ExamPage.css";
 
 function ExamPage(){
+
+    const [answerChoose, setAnswerChoose] = useState([]);
 
     return(
         <div className="exam-page">
@@ -14,6 +17,16 @@ function ExamPage(){
                 <Question id={5}/>
                 <Question id={6}/>
             </div>
+            <div className="exam-action">
+
+            </div>
+            <div style={{
+                'minHeight':'54px',
+                'textAlign':'center',
+                'marginTop':'36px',
+                'color':'#ccc',
+                'userSelect':'none'
+            }} className="empty-bottom">huyhuanEducationApp Contact@google.com</div>
         </div>
     )
 }
