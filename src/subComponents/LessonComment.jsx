@@ -9,8 +9,8 @@ function LessonComment(props) {
     return (
         <div className="comment-wrapper">
             <h2 className="comment-counter">{`${dummyComments.length} bình luận`}</h2>
-            <input placeholder="Dien binh luan tai day"></input>
-            <button>Bình luận</button>
+            <input className="comment-input" placeholder="Dien binh luan tai day"></input>
+            <button className="comment-button">Bình luận</button>
 
             <div className="comment-list">
                 {dummyComments.map((comment)=> {
@@ -33,7 +33,6 @@ function LessonCommentItem(props){
 
     return (
         <div className="comment-item">
-            <img src={`url(${user.avatar})`} alt="user avatar"></img>
             <h3 className="comment-username">{user.username}</h3>
             <div className="comment-content">{props.commentContent}</div>
         </div>

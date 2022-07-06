@@ -1,3 +1,25 @@
 .comment-wrapper {
-    margin: 0 16px;
+    margin: 16px;
+    overflow-y: hidden;
+    height: 1000px;
+}
+
+.comment-input {
+    width: 100%;
+}
+
+.comment-button {
+}
+
+.comment-list {
+    margin-top: 12px;
+}
+
+.comment-username {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+}
+
+.comment-content {
+    margin-bottom: 16px;
 }

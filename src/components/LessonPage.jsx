@@ -56,15 +56,8 @@ function LessonPage(props) {
             })
         });
 
-    },[courseid])
+    },[courseid, lessonid])
 
-
-
-    // useEffect(()=>{
-    //     console.log(listChapter);
-        
-    //         // setListLesson([...new Map(listLesson.map((item, key) => [item[key], item])).values()]);
-    // },[listChapter])
 
     const dummyData = [
         {
@@ -133,7 +126,6 @@ function LessonPage(props) {
                                 var lessonInside = listLesson.filter((lesson)=>{
                                     return lesson.chapter_id === chapter.id;
                                 })
-                                // console.log(lessonInside);
                                 return <DropdownLearn key={chapter.id} heading={chapter.nameChapter} data={lessonInside} courseId={courseid} />
                             })
                         }
