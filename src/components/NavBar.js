@@ -1,10 +1,19 @@
+import { useNavigate } from 'react-router-dom';
 import '../resources/styles/componentStyle/NavBar.css';
 import '../resources/styles/globalStyle/common.css';
 
 function NavBar(props) {
+
+    let navigate = useNavigate();
+
+    const navigateToHomePage = ()=>{
+        navigate("/");
+    }
+
     return (
+
         <div className="main-nav">
-            <div className="main-nav-logo"></div>
+            <div onClick={navigateToHomePage} className="main-nav-logo"></div>
             <div className="main-nav-item">
                 {props.children}
             </div>

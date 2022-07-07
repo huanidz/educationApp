@@ -7,12 +7,14 @@ import { useEffect } from "react"
 
 function LessonDescription(props) {
 
-    const [contentRender, setContentRender] = useState(<LessonDocument/>)
+    const [contentRender, setContentRender] = useState(<div style={{'margin':'16px', 'fontSize':'1.6rem'}}>Xin chao ban den voi bai hoc</div>)
     const [documentData, setDocumentData] = useState([{}]);
 
 
     useEffect(()=>{
         setDocumentData(props.documents);
+        // setContentRender(<div style={{'margin':'16px', 'fontSize':'1.6rem'}}>Xin chao ban den voi bai hoc</div>)
+        setContentRender(<LessonDocument data={props.documents}/>)
     },[props.documents])
 
     return (

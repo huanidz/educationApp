@@ -6,7 +6,6 @@ import Iframe from 'react-iframe';
 import LessonDescription from './LessonDescription';
 import NavBar from './NavBar';
 import {useParams, useNavigate} from 'react-router-dom';
-import getCourseById from '../apis/CourseApi';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import axios from 'axios';
@@ -19,14 +18,19 @@ function LessonPage(props) {
     const [listLesson, setListLesson] = useState([]);
     const [videoUrl, setVideoUrl] = useState("");
     const [lessonContent, setLessonContent] = useState([]);
+
     useEffect(()=>{
+        
+
         axios.get(`https://huy-huan.herokuapp.com/course/${courseid}`, {
             headers: {
                 "Access-Control-Allow-Origin": "*"
             }
         })
         .then(res=>{
-
+            //Reset state on params change
+            setLessonContent([]);
+            setVideoUrl("");
             setCourseName(res.data.nameCourse);
             setListChapter(res.data.listChapter);
 
@@ -41,7 +45,7 @@ function LessonPage(props) {
                     });
                 }).catch((e)=>{
                     console.log(e);
-                })
+                });
             });
 
             return res;
@@ -57,10 +61,11 @@ function LessonPage(props) {
                     var merged = [...prev, ...response.data.listContent.filter(d => !ids.has(d.id))];
                     return merged;
                 });
-            })
+            });
 
             return res;
         });
+        
 
     },[courseid, lessonid]);
 
@@ -88,14 +93,15 @@ function LessonPage(props) {
                 <div className="lesson-video-area">
                     <div className="lesson-video">
                         <Iframe 
-                            // url="http://www.youtube.com/embed/xDMP3i36naA" 
                             url={videoUrl}
                             width='100%'
                             height='100%' 
                         />
                     </div>
                     <div className="lesson-description">
-                        <LessonDescription documents={lessonContent} />
+                        <LessonDescription nameLesson={listLesson.find((lesson)=>{
+                            return lesson.id == lessonid;
+                        })?.nameLesson} documents={lessonContent} lessonid={lessonid} />
                     </div>
                 </div>
 

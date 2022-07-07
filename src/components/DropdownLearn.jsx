@@ -20,7 +20,7 @@ function DropdownLearn({data, heading,courseId, ItemOnClickEvent, HeadingOptiona
                 items.map((item,index)=>{
                     return (<>
                         <div style={{display:'flex', justifyContent:'space-between'}} className="dropdown-item">
-                            <Link to={`/course/${courseId}/lesson/${index}`} >{item.nameLesson}</Link>
+                            <Link to={`/course/${courseId}/lesson/${item.id}`} >{item.nameLesson}</Link>
                             <div className='dropdown-child-optional-item'>{ChildOptionalItem}</div>
                         </div>
                         {IsReadyToHaveChild && (index + 1 === items.length) ? 

@@ -20,6 +20,7 @@
     background-size: cover;
     position: relative;
     top: 10px;
+    cursor: pointer;
 }
 
 .main-nav-item {
