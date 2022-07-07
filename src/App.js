@@ -7,6 +7,7 @@ import HomePage from './components/HomePage';
 import NotFound from './pages/NotFound';
 import ExamPage from './components/ExamPage';
 import CoursePage from './components/CoursePage';
+import LoginPage from './components/LoginPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
 
         <Routes>
           <Route path='/' element={<HomePage/>} />
+          <Route path='/login' element={<LoginPage/>}/>
           <Route path="/course/:courseid" element={<CoursePage/>} />
           <Route path='/course/:courseid/lesson/:lessonid' element={<LessonPage/>} />
           <Route path='/course/:courseid/lesson/:lessonid/exam' element={<ExamPage/>} />

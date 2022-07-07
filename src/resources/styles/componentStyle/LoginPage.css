@@ -1,0 +1,127 @@
+.login-page {
+    width: 100%;
+    height: 100vh;
+    
+}
+
+.login-background {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../../img/bitmap/bgbluekeyboard.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+.login-area {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    min-width: 520px;
+    max-width: 30%;
+    min-height: 80%;
+    background-color: aliceblue;
+    -webkit-box-shadow: -2px -1px 15px 7px rgba(0,0,0,0.5);
+    -moz-box-shadow: -3px -2px 30px 14px rgba(0,0,0,0.425);
+    box-shadow: -4px -3px 45px 21px rgba(0,0,0,0.35);
+    border-radius: 8px;
+}
+
+.login-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 32px;
+}
+
+.login-title {
+    align-self: center;
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 32px 0 24px 0;
+}
+
+.login-input-field {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 30%;
+}
+
+.login-input-field label {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+}
+
+.login-input-field input {
+    margin-bottom: 24px;
+    height: 40px;
+    font-size: 1.3rem;
+    padding: 4px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.login-but {
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.35);
+    cursor: pointer;
+}
+
+.login-but:hover {
+    opacity: 0.9;
+}
+
+/* Loading effect */
+.loading-effect-wrapper {
+    display: flex;
+    margin: auto;
+    margin-bottom: 90px;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #bbb;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #bbb transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+  

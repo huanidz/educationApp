@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../resources/styles/componentStyle/NavBar.css';
 import '../resources/styles/globalStyle/common.css';
@@ -6,7 +7,24 @@ function NavBar(props) {
 
     let navigate = useNavigate();
 
+    const [isLogin, setIsLogin] = useState(false);
+
     const navigateToHomePage = ()=>{
+        navigate("/");
+    }
+
+    useEffect(()=>{
+        if(localStorage.getItem("accessUsername")){
+            setIsLogin(true);
+        }else{
+            setIsLogin(false);
+        }
+    },[])
+
+    const handleLogout = () => {
+        localStorage.removeItem("accessUsername");
+        localStorage.removeItem("accessUserId");
+        setIsLogin(false);
         navigate("/");
     }
 
@@ -18,8 +36,12 @@ function NavBar(props) {
                 {props.children}
             </div>
             <div className="main-nav-login">
-                <button className="btn-navbar btn-login">Log in</button>
-                <button className="btn-navbar btn-signup">Sign up</button>
+                {isLogin ? <button onClick={handleLogout} className="btn-navbar btn-login">Log Out</button> :
+                    <>
+                        <button onClick={()=>{navigate("/login")}} className="btn-navbar btn-login">Log in</button>
+                        <button onClick={()=>{navigate("/signup")}} className="btn-navbar btn-signup">Sign up</button>
+                    </>
+                } 
             </div>
         </div>
     )
