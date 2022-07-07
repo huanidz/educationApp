@@ -1,26 +1,25 @@
-import './App.css';
-import './resources/styles/globalStyle/common.css'
-import {Routes, Route} from 'react-router-dom';
-import AdministrationPage from './components/AdministrationPage';
-import LessonPage from './components/LessonPage';
-import HomePage from './components/HomePage';
-import NotFound from './pages/NotFound';
-import ExamPage from './components/ExamPage';
-import CoursePage from './components/CoursePage';
+import './fake-db'
+import React from 'react'
+import { Store } from './redux/Store'
+import { Provider } from 'react-redux'
+import { AllPages } from './routes/routes'
+import { MatxTheme } from './components'
+import { useRoutes } from 'react-router-dom'
+import { AuthProvider } from './contexts/JWTAuthContext'
+import { SettingsProvider } from './contexts/SettingsContext'
 
-function App() {
-  return (
-    <div>
+const App = () => {
+    const all_pages = useRoutes(AllPages())
 
-        <Routes>
-          <Route path='/' element={<HomePage/>} />
-          <Route path="/course/:courseid" element={<CoursePage/>} />
-          <Route path='/course/:courseid/lesson/:lessonid' element={<LessonPage/>} />
-          <Route path='/course/:courseid/lesson/:lessonid/exam' element={<ExamPage/>} />
-          <Route path="/*" component={<NotFound/>} />
-        </Routes>
-    </div>
-  );
+    return (
+        <Provider store={Store}>
+            <SettingsProvider>
+                <MatxTheme>
+                    <AuthProvider>{all_pages}</AuthProvider>
+                </MatxTheme>
+            </SettingsProvider>
+        </Provider>
+    )
 }
 
-export default App;
+export default App
