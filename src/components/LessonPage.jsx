@@ -17,8 +17,8 @@ function LessonPage(props) {
     const [courseName, setCourseName] = useState("");
     const [listChapter, setListChapter] = useState([]); 
     const [listLesson, setListLesson] = useState([]);
-    const [videoUrl, setVideoUrl] = useState("")
-
+    const [videoUrl, setVideoUrl] = useState("");
+    const [lessonContent, setLessonContent] = useState([]);
     useEffect(()=>{
         axios.get(`https://huy-huan.herokuapp.com/course/${courseid}`, {
             headers: {
@@ -52,64 +52,17 @@ function LessonPage(props) {
             }})
             .then((response)=>{
                 setVideoUrl(response.data.linkvideo);
-                console.log(response.data.linkvideo);
+                setLessonContent((prev) => {
+                    var ids = new Set(prev.map(d => d.id));
+                    var merged = [...prev, ...response.data.listContent.filter(d => !ids.has(d.id))];
+                    return merged;
+                });
             })
+
+            return res;
         });
 
-    },[courseid, lessonid])
-
-
-    const dummyData = [
-        {
-            sectionId: 0,
-            sectionName: "Section 1",
-            lessonList: [
-                'Lesson 1.1', 'Lesson 1.2', 'Lesson 1.3', 'Lesson 1.4', 'Lesson 1.5'
-            ]
-        },
-        {
-            sectionId: 1,
-            sectionName: "Section 2",
-            lessonList: [
-                'Lesson 2.2', 'Lesson 2.2', 'Lesson 2.3', 'Lesson 2.4', 'Lesson 2.5'
-            ]
-        },
-        {
-            sectionId: 2,
-            sectionName: "Section 3",
-            lessonList: [
-                'Lesson 3.3', 'Lesson 3.2', 'Lesson 3.3', 'Lesson 3.4', 'Lesson 3.5'
-            ]
-        },
-        {
-            sectionId: 3,
-            sectionName: "Section 4",
-            lessonList: [
-                'Lesson 4.3', 'Lesson 4.2', 'Lesson 4.3', 'Lesson 4.4', 'Lesson 4.5'
-            ]
-        },
-        {
-            sectionId: 4,
-            sectionName: "Section 3",
-            lessonList: [
-                'Lesson 3.3', 'Lesson 3.2', 'Lesson 3.3', 'Lesson 3.4', 'Lesson 3.5'
-            ]
-        },
-        {
-            sectionId: 5,
-            sectionName: "Section 3",
-            lessonList: [
-                'Lesson 3.3', 'Lesson 3.2', 'Lesson 3.3', 'Lesson 3.4', 'Lesson 3.5'
-            ]
-        },
-        {
-            sectionId: 6,
-            sectionName: "Section 3",
-            lessonList: [
-                'Lesson 3.3', 'Lesson 3.2', 'Lesson 3.3', 'Lesson 3.4', 'Lesson 3.5'
-            ]
-        },
-    ]
+    },[courseid, lessonid]);
 
     return (
         <>
@@ -142,7 +95,7 @@ function LessonPage(props) {
                         />
                     </div>
                     <div className="lesson-description">
-                        <LessonDescription />
+                        <LessonDescription documents={lessonContent} />
                     </div>
                 </div>
 
