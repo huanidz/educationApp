@@ -15,10 +15,10 @@ function App() {
 
         <Routes>
           <Route path='/' element={<HomePage/>} />
+          <Route path='/admin' element={<AdministrationPage/>} />
           <Route path='/login' element={<LoginPage/>}/>
           <Route path="/course/:courseid" element={<CoursePage/>} />
           <Route path='/course/:courseid/lesson/:lessonid' element={<LessonPage/>} />
-          <Route path='/course/:courseid/lesson/:lessonid/exam' element={<ExamPage/>} />
           <Route path="/*" component={<NotFound/>} />
         </Routes>
     </div>

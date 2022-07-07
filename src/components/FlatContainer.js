@@ -1,8 +1,12 @@
 import '../resources/styles/componentStyle/HexagonCard.css'
 import '../resources/styles/componentStyle/FlatContainer.css';
 import '../resources/styles/globalStyle/common.css'
+import { useNavigate } from 'react-router-dom';
 
 function FlatContainer({Children}) {
+
+    let navigate = useNavigate();
+
     return (
         <>
             <div className="flat-container">
@@ -13,7 +17,7 @@ function FlatContainer({Children}) {
                     <p className="flat-container-buying-text">
                         This is text to show,<br/> This is text to show, This is text to show
                     </p>
-                    <button className="flat-container-buying-button">Bắt đầu học</button>
+                    <button onClick={()=>{navigate("./course/1")}} className="flat-container-buying-button">Bắt đầu học</button>
                 </div>
                 <div className="flat-container-hex-wrapper margin-32">
                     <HexagonCard isLeft size="150"/>
