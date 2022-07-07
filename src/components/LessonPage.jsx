@@ -5,7 +5,7 @@ import DropdownLearn from './DropdownLearn';
 import Iframe from 'react-iframe';
 import LessonDescription from './LessonDescription';
 import NavBar from './NavBar';
-import {useParams, useNavigate} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import axios from 'axios';

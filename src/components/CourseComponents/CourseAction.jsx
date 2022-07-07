@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import ReactDOM from 'react'
 import "../../resources/styles/componentStyle/CourseAction/CourseAction.css"
 import "../../resources/styles/globalStyle/common.css"
 import Dropdown from "../Dropdown"
