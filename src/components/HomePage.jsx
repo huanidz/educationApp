@@ -71,7 +71,7 @@ function HomePage() {
             <NavBar>
                 <ul className="main-nav-item-list">
                     <li className="main-nav-item-list-item">Khóa học</li>
-                    <li className="main-nav-item-list-item">Bài viết</li>
+                    <li className="main-nav-item-list-item">Chat</li>
                     {/* <li className="main-nav-item-list-item">Đăng ký học</li> */}
                 </ul>
             </NavBar>
