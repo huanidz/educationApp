@@ -93,7 +93,7 @@ function LessonPage(props) {
                 <div className="lesson-video-area">
                     <div className="lesson-video">
                         <Iframe 
-                            url={videoUrl}
+                            url={videoUrl.replace("watch?v=","embed/")}
                             width='100%'
                             height='100%' 
                         />

@@ -42,13 +42,13 @@ function CourseAction({actionType}) {
                     <CourseDetail courseId/>
                     <CourseDetail courseId/>
                     <CourseDetail courseId/>
-                    <CourseDetail onClickEvent={()=>{setModalOpen(true);console.log("I click here");}} courseId isNew/>
+                    <CourseDetail onClickEvent={()=>{setModalOpen(true)}} courseId isNew/>
                 </div>
                 <div className='ca-btn-main'>
                     <CourseActionButton actionType={action}/>
                 </div>
             </div>
-            <CourseDetailCreation isOpen={modalOpen}/>
+            <CourseDetailCreation isOpen={modalOpen} handleClose={()=>{setModalOpen(false)}}/>
         </div>
     )
 }
@@ -89,11 +89,15 @@ function CourseDetail({courseId, isNew, onClickEvent}) {
         );
 }
 
-function CourseDetailCreation({isOpen}){
+function CourseDetailCreation({isOpen, handleClose}){
     if(isOpen){
         return (
             <div className='cdc-modal'>
-                <div style={{margin:'16px 0 0 16px'}}>Create Lesson</div>
+                <div className='flex-row-container' style={{margin:'16px 0 0 16px',
+            'justifyContent':'space-between'}}>
+                    Create Lesson
+                    <button onClick={handleClose}>X</button>
+                </div>
                 <div style={{margin:'16px'}} className='course-act-input-area'>
                     <div className='course-act-input-fields'>
                         <label htmlFor=''>Lesson Name</label>
@@ -114,11 +118,11 @@ function CourseDetailCreation({isOpen}){
                 
                 <div style={{padding:'-8px 16px 0'}} className='cdc-questing-detail'>
                     <label style={{paddingBottom:'8px'}} htmlFor=''>Questing</label>
+                    {/* <CourseDetail courseId/>
                     <CourseDetail courseId/>
                     <CourseDetail courseId/>
                     <CourseDetail courseId/>
-                    <CourseDetail courseId/>
-                    <CourseDetail courseId isNew/>
+                    <CourseDetail courseId isNew/> */}
                 </div>
                 <div className='ca-btn-main'>
                     <CourseActionButton/>

@@ -1,33 +1,9 @@
 import React , {useState} from 'react';
 
 import "../resources/styles/componentStyle/AdminPage.css"
-import CrudTable from "./CrudTable";
 import CourseAction from './CourseComponents/CourseAction';
 
 function AdministrationPage(){
-
-    // const [tableDatas, setTableDatas] = useState([]);
-
-    const dummy = [
-        {
-            id: 0,
-            courseName: 'Java',
-        },
-        {
-            id: 1,
-            courseName: 'PHP',
-        },
-        {
-            id: 2,
-            courseName: 'Python',
-        },
-        {
-            id: 3,
-            courseName: 'C#',
-        },
-    ]
-
-    const col = ['id', 'courseName', 'actions']
 
     return (
         <div className="admin-page-wrapper">
