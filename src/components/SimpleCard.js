@@ -1,7 +1,10 @@
+import { useNavigate } from 'react-router-dom'
 import '../resources/styles/componentStyle/SimpleCard.css'
 import '../resources/styles/globalStyle/common.css'
 
 function SimpleCard (props) {
+
+    let navigate = useNavigate();
 
     const CSS_inline = {
         width: props.width,
@@ -17,7 +20,7 @@ function SimpleCard (props) {
 
     return (
         <>
-            <div className="card-wrapper" style={CSS_inline}>
+            <div onClick={()=>{navigate(`/course/${dataPassing.id}`)}} className="card-wrapper" style={CSS_inline}>
                 <div className="card-content flex-column-container">
                     <div className="card-img" style={{
                         backgroundImage: `url(${dataPassing.img || dummyData.img})`

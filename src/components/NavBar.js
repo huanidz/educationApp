@@ -22,8 +22,10 @@ function NavBar(props) {
     },[])
 
     const handleLogout = () => {
+        console.log(localStorage);
         localStorage.removeItem("accessUsername");
         localStorage.removeItem("accessUserId");
+        console.log(localStorage);
         setIsLogin(false);
         navigate("/");
     }
