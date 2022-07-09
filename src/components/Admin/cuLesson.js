@@ -85,11 +85,11 @@ getData();
   
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Thêm mới KHóa học
+      <Button variant="outlined"  style={{marginTop:'60px'}} onClick={handleClickOpen}>
+        Thêm mới bài học
       </Button>
       <Dialog  open={open} onClose={handleClose}>
-        <DialogTitle>Thêm khóa học</DialogTitle>
+        <DialogTitle>Thêm bài học</DialogTitle>
         <DialogContent style={{ height:'450px' , width:'550px'}}>
         <DialogContentText  >
             Lọai khóa học
@@ -107,7 +107,7 @@ getData();
       renderInput={(params) => <TextField {...params} label="khoa hoc" />}
     />
           <DialogContentText   style={{marginTop:'30px'}}>
-            Tên khóa học
+            Tên bài học
           </DialogContentText>
           <TextField
             value={name}
@@ -115,12 +115,12 @@ getData();
             autoFocus
             margin="dense"
             id="name"
-            label="NHập tên khóa học"
+            label="NHập tên bài học"
             fullWidth
             variant="standard"
           />
            <DialogContentText style={{marginTop:'30px'}} >
-            Ảnh khóa học
+            LInk video bài học
           </DialogContentText>
           <TextField
              value={image}
@@ -128,7 +128,7 @@ getData();
             autoFocus
             margin="dense"
             id="name"
-            label="NHập ảnh khóa học"
+            label="NHập link video bài học"
             fullWidth
             variant="standard"
           />

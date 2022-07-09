@@ -22,6 +22,12 @@ function App() {
           <Route path='/chat' element={<Index/>} />
 
           <Route path='/admin' element={<AdministrationPage/>} />
+          <Route path='/admin/Course' element={<AdministrationPage/>} />
+
+          <Route path='/admin/Chapter' element={<AdministrationPageChapter/>} />
+
+          <Route path='/admin/Lesson' element={<AdministrationPagelesson/>} />
+
           <Route path='/login' element={<LoginPage/>}/>
           <Route path='/signup' element={<SignUpPage/>}/>
           <Route path="/course/:courseid" element={<CoursePage/>} />

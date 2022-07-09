@@ -84,7 +84,7 @@ getData();
   
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
+      <Button variant="outlined"  style={{marginTop:'60px'}} onClick={handleClickOpen}>
         Thêm mới chương học
       </Button>
       <Dialog  open={open} onClose={handleClose}>
