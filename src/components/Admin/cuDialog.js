@@ -40,14 +40,16 @@ export default function FormDialog(reload) {
        description: description,
      })
      .then(function (response) {
+      window.location.reload();
+
        console.log(response);
      })
      .catch(function (error) {
        console.log(error);
      });
    setOpen(false);
-   reload();
-  };
+
+    };
 
 
   const getData = async () => {

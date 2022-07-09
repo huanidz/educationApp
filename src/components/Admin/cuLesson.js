@@ -40,12 +40,13 @@ export default function FormDialog(reload) {
      })
      .then(function (response) {
        console.log(response);
+       window.location.reload();
+
      })
      .catch(function (error) {
        console.log(error);
      });
    setOpen(false);
-   reload();
   };
 
 
