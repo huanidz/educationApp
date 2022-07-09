@@ -1,14 +1,14 @@
 import React , {useState, useEffect} from 'react';
 
 import "../resources/styles/componentStyle/AdminPage.css"
-import CustomizedTables from '../components/Admin/Tables';
-import FormDialog from '../components/Admin/cuDialog'
+import CustomizedTables from './Admin/tablelesson';
+import FormDialog from './Admin/cuLesson'
 
-const AdministrationPage = () =>{
+const AdministrationPagelesson = () =>{
     const [data,setData] = useState([]);
 
     const getData = async () => {
-        const res = await fetch("https://huy-huan.herokuapp.com/course");
+        const res = await fetch("https://huy-huan.herokuapp.com/lesson");
         const datas = await res.json();
         console.log('data', datas);
         setData(datas);
@@ -60,4 +60,4 @@ const AdministrationPage = () =>{
     )
 }
 
-export default AdministrationPage;
+export default AdministrationPagelesson;

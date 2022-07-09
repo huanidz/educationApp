@@ -2,6 +2,9 @@ import './App.css';
 import './resources/styles/globalStyle/common.css'
 import {Routes, Route} from 'react-router-dom';
 import AdministrationPage from './components/AdministrationPage';
+import AdministrationPageChapter from './components/AdministrationPageChapter';
+import AdministrationPagelesson from './components/AdministrationPagelesson';
+
 import LessonPage from './components/LessonPage';
 import HomePage from './components/HomePage';
 import NotFound from './pages/NotFound';
@@ -18,7 +21,7 @@ function App() {
           <Route path='/' element={<HomePage/>} />
           <Route path='/chat' element={<Index/>} />
 
-          <Route path='/admin' element={<AdministrationPage/>} />
+          <Route path='/admin' element={<AdministrationPagelesson/>} />
           <Route path='/login' element={localStorage.getItem("accessUserId") ? <HomePage/> : <LoginPage/>}/>
           <Route path="/course/:courseid" element={<CoursePage/>} />
           <Route path='/course/:courseid/lesson/:lessonid' element={localStorage.getItem("accessUserId") ? <LessonPage/> : <LoginPage/>} />
