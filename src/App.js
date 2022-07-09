@@ -19,10 +19,10 @@ function App() {
           <Route path='/chat' element={<Index/>} />
 
           <Route path='/admin' element={<AdministrationPage/>} />
-          <Route path='/login' element={localStorage.getItem("accessUserId") ? <HomePage/> : <LoginPage/>}/>
-          <Route path='/signup' element={localStorage.getItem("accessUserId") ? <HomePage/> : <SignUpPage/>}/>
+          <Route path='/login' element={<LoginPage/>}/>
+          <Route path='/signup' element={<SignUpPage/>}/>
           <Route path="/course/:courseid" element={<CoursePage/>} />
-          <Route path='/course/:courseid/lesson/:lessonid' element={localStorage.getItem("accessUserId") ? <LessonPage/> : <LoginPage/>} />
+          <Route path='/course/:courseid/lesson/:lessonid' element={<LessonPage/>} />
           <Route path="/*" component={<NotFound/>} />
         </Routes>
     </div>

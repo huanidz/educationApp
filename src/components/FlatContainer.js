@@ -15,9 +15,9 @@ function FlatContainer({Children}) {
                         {/* Image */}
                     </div>
                     <p className="flat-container-buying-text">
-                        This is text to show,<br/> This is text to show, This is text to show
+                        Bắt đầu học ngay<br/> Thử ngay với khóa học Kinh tế học
                     </p>
-                    <button onClick={()=>{navigate("./course/1")}} className="flat-container-buying-button">Bắt đầu học</button>
+                    <button onClick={()=>{navigate("/course/1")}} className="flat-container-buying-button">Bắt đầu học</button>
                 </div>
                 <div className="flat-container-hex-wrapper margin-32">
                     <HexagonCard isLeft size="150"/>
