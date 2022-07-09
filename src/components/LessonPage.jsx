@@ -18,6 +18,7 @@ function LessonPage(props) {
     const [listLesson, setListLesson] = useState([]);
     const [videoUrl, setVideoUrl] = useState("");
     const [lessonContent, setLessonContent] = useState([]);
+    const [lessonExam, setLessonExam] = useState([]);
 
     useEffect(()=>{
         
@@ -30,6 +31,7 @@ function LessonPage(props) {
         .then(res=>{
             //Reset state on params change
             setLessonContent([]);
+            setLessonExam([]);
             setVideoUrl("");
             setCourseName(res.data.nameCourse);
             setListChapter(res.data.listChapter);
@@ -43,7 +45,19 @@ function LessonPage(props) {
                         var merged = [...prev, ...response.data.listLesson.filter(d => !ids.has(d.id))];
                         return merged;
                     });
-                }).catch((e)=>{
+                })
+                // .then((res)=>{
+                //     listLesson.forEach((lesson)=>{
+                //         axios.get(`https://huy-huan.herokuapp.com/lesson/${lesson.id}`,{headers: {
+                //             "Access-Control-Allow-Origin": "*"
+                //         }})
+                //         .then((response)=>{
+
+                //         })
+                //     })
+                // })
+                
+                .catch((e)=>{
                     console.log(e);
                 });
             });
@@ -61,6 +75,11 @@ function LessonPage(props) {
                     var merged = [...prev, ...response.data.listContent.filter(d => !ids.has(d.id))];
                     return merged;
                 });
+                setLessonExam((prev) => {
+                    var ids = new Set(prev.map(d => d.id));
+                    var merged = [...prev, ...response.data.listQuest.filter(d => !ids.has(d.id))];
+                    return merged;
+                })
             });
 
             return res;
@@ -101,7 +120,7 @@ function LessonPage(props) {
                     <div className="lesson-description">
                         <LessonDescription nameLesson={listLesson.find((lesson)=>{
                             return lesson.id == lessonid;
-                        })?.nameLesson} documents={lessonContent} lessonid={lessonid} />
+                        })?.nameLesson} documents={lessonContent} questions={lessonExam} />
                     </div>
                 </div>
 

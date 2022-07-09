@@ -80,8 +80,8 @@ function HomePage() {
         <div>
             <NavBar>
                 <ul className="main-nav-item-list">
-                    <li className="main-nav-item-list-item">Khóa học</li>
-                    <li className="main-nav-item-list-item">Chat</li>
+                    {/* <li className="main-nav-item-list-item">Khóa học</li>
+                    <li className="main-nav-item-list-item">Chat</li> */}
                     {/* <li className="main-nav-item-list-item">Đăng ký học</li> */}
                 </ul>
             </NavBar>
@@ -101,9 +101,9 @@ function HomePage() {
 
             <FreeContainer className="flex-row-container" style={{margin:"0 18% 0"}}>
                 {
-                sexyDropdownDummy.map((data, index) => {
-                    return <SexyDropdown key={index} data={data}/>
-                })
+                    sexyDropdownDummy.map((data, index) => {
+                        return <SexyDropdown key={index} data={data}/>
+                    })
                 }
             </FreeContainer>
 
